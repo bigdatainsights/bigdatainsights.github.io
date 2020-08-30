@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+  <html>
+  <!--Heading-->
+    <head> <meta name="viewport" content="width=device-width, initial-scale=1">
+     <!--CSS style this html--> 
+      <style>
+      body {font-family: Arial;}
+      .center { margin: auto; width: 100%; padding: 10px;}
+      .tab button {background-color: inherit;float: right;}
+      /*Padding top---left*/
+      #main {display: table; border-radius: 6px; border: 0px solid white;background-color:white; margin: auto;padding: 4px 8px 4px 4px;}
+      </style>
+    <!--End Heading-->
+    </head>
+      <!--HTML Tabs Javascript-->
+        <script>
+          // Script to open each tabs
+          function openTab(evt, TabName) {
+              var i, tabcontent, tablinks;
+              tabcontent = document.getElementsByClassName("tabcontent");
+              for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+              }
+              tablinks = document.getElementsByClassName("tablinks");
+              for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+              }
+              document.getElementById(TabName).style.display = "block";
+              evt.currentTarget.className += " active";
+          }
+          function Refresh(){
+              window.location.reload();
+              //document.getElementById("TaskDetails").click();
+          }
+        </script>
+    <!--Body-->
+      <body style="width: 100%;height: 100%;overflow: hidden;">
+      <!--container-->
+      <div id='main'>   
+        <!--tabs-->
+        <div class="tab">
+          <button class="tablinks" onclick="Refresh();" id="Tab1" >&#8634;</button>
+          <!--<button class="tablinks" onclick="openTab(event, 'Tab2')" id="Tab2" >Other Dashboards</button>-->
+        </div>
+      <!--Tab 1: Task Details-->
+        <div id="Tab1" class="tabcontent">
+        <div class='tableauPlaceholder' id='viz1598774761195' style='position: relative'>
+          <noscript>
+            <a href='#'>
+            <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;MD&#47;MDMOPSTaskDashboard&#47;TaskSummary&#47;1_rss.png' style='border: none' />
+            </a>
+          </noscript>
+          <object class='tableauViz'  style='display:none;'>
+            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+            <param name='embed_code_version' value='3' /> 
+            <param name='site_root' value='' />
+            <param name='name' value='MDMOPSTaskDashboard&#47;TaskSummary' />
+            <param name='tabs' value='yes' />
+            <param name='toolbar' value='no' />
+            <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;MD&#47;MDMOPSTaskDashboard&#47;TaskSummary&#47;1.png' />
+            <param name='animate_transition' value='yes' />
+            <param name='display_static_image' value='yes' />
+            <param name='display_spinner' value='yes' />
+            <param name='display_overlay' value='yes' />
+            <param name='display_count' value='yes' />
+            <param name='language' value='en' />
+            <param name='showShareOptions' value='false' />
+          </object>
+        </div>                
+      <!--Tab1: Tableau Javascript-->
+        <script type='text/javascript'>
+            var divElement = document.getElementById('viz1598774761195');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            vizElement.style.width='1240px';vizElement.style.height='700px';
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+          </script>
+    <!--End Tab 1: Task Details-->
+      </div>
+      <!--end containerization-->
+    </div>
+  </body>
+</html>
